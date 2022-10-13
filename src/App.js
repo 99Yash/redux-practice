@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     if (isInit) {
       isInit = false;
-      return; //? to not send the cart data for the very first time component renders. which is why its defined above App()
+      return; //? to not send the cart data for the very first time component renders. which is why its defined above App.js
     }
 
     if (cart.changed) {

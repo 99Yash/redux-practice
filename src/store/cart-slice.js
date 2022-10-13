@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
-  //? decide the initial state yourself by looking at the app
+  //* decide the initial state yourself by looking at the app
   name: "cart",
   initialState: {
     items: [],
@@ -13,6 +13,7 @@ const cartSlice = createSlice({
       state.totalQuantity = action.payload.totalQuantity;
       state.items = action.payload.items;
     },
+
     addItemToCart(state, action) {
       const newItem = action.payload; //?extract the item from the action
       const existingItem = state.items.find((item) => item.id === newItem.id); //? add items as a new entry if item id doesn't match with new item id
@@ -20,7 +21,7 @@ const cartSlice = createSlice({
       state.changed = true;
       if (!existingItem) {
         state.items.push({
-          //?push() modifies the array but its fine in redux toolkit
+          //*decide the type of the item yourself
           id: newItem.id,
           price: newItem.price,
           quantity: 1,
